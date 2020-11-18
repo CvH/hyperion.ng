@@ -135,12 +135,3 @@ if(CMAKE_HOST_UNIX)
 	install( FILES ${CMAKE_BINARY_DIR}/symlink_hyperiond DESTINATION "bin" RENAME hyperiond COMPONENT "Hyperion" )
 	install( CODE "FILE (REMOVE ${CMAKE_BINARY_DIR}/symlink_hyperiond )" COMPONENT "Hyperion" )
 endif()
-
-# Copy dependencies (not for OSX)
-include(${CMAKE_SOURCE_DIR}/cmake/Dependencies.cmake)
-
-if (NOT ENABLE_OSX AND NOT WIN32) # Unix
-	DeployUnix("hyperiond")
-elseif(WIN32) # Windows
-	DeployWindows("hyperiond")
-endif ()
