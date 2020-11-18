@@ -388,6 +388,15 @@ IF ( "${Qt5Core_VERSION}" VERSION_LESS "${QT_MIN_VERSION}" )
 	message( FATAL_ERROR "Your Qt version is to old! Minimum required ${QT_MIN_VERSION}" )
 ENDIF()
 
+       foreach(plugin ${Qt5Sql_PLUGINS} Qt5::Sql)
+               get_target_property(_loc ${plugin} LOCATION)
+               set(plugin_libs ${plugin_libs} ${_loc})
+       endforeach()
+       foreach(plugin ${Qt5Gui_PLUGINS} Qt5::Gui)
+               get_target_property(_loc ${plugin} LOCATION)
+               set(plugin_libs ${plugin_libs} ${_loc})
+       endforeach()
+
 # Add libusb and pthreads
 find_package(libusb-1.0 REQUIRED)
 find_package(Threads REQUIRED)
