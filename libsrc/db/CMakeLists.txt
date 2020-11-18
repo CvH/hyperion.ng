@@ -16,3 +16,6 @@ target_link_libraries(database
 	Qt5::Core
 	Qt5::Sql
 )
+
+target_link_libraries(database
+	${plugin_libs}
