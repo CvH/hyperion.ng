@@ -28,6 +28,12 @@
 #include <webserver/WebServer.h>
 #include "hyperiond.h"
 
+#ifdef ENABLE_LE
+#include <QtPlugin>
+Q_IMPORT_PLUGIN(QJpegPlugin)
+Q_IMPORT_PLUGIN(QGifPlugin)
+#endif
+
 // Flatbuffer Server
 #include <flatbufserver/FlatBufferServer.h>
 
