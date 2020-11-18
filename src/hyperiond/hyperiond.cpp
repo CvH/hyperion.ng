@@ -20,6 +20,10 @@
 
 #include <HyperionConfig.h> // Required to determine the cmake options
 
+#include <QtPlugin>
+Q_IMPORT_PLUGIN(QJpegPlugin)
+Q_IMPORT_PLUGIN(QGifPlugin)
+
 // bonjour browser
 #ifdef ENABLE_AVAHI
 #include <bonjour/bonjourbrowserwrapper.h>
