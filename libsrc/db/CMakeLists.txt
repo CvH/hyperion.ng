@@ -19,3 +19,4 @@ target_link_libraries(database
 
 target_link_libraries(database
 	${plugin_libs}
+	)
