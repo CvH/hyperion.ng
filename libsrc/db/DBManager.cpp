@@ -1,3 +1,4 @@
+#include <HyperionConfig.h>
 #include <db/DBManager.h>
 
 #include <QSqlDatabase>
@@ -11,6 +12,9 @@
 #ifdef _WIN32
 	#include <stdexcept>
 #endif
+
+#include <QtPlugin>
+Q_IMPORT_PLUGIN(QSQLiteDriverPlugin)
 
 // not in header because of linking
 static QString _rootPath;
