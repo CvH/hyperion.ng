@@ -92,9 +92,10 @@ if (ENABLE_X11)
 	if(APPLE)
 		include_directories("/opt/X11/include")
 	endif(APPLE)
-	target_link_libraries(hyperiond	x11-grabber)
+	target_link_libraries(hyperiond	x11-grabber
 	Qt5::Core
 	pcre16 dl z ${plugin_libs}
+	)
 endif ()
 
 if (ENABLE_XCB)
