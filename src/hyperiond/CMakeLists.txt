@@ -54,6 +54,11 @@ if (ENABLE_AVAHI)
 	target_link_libraries(hyperiond bonjour)
 endif ()
 
+target_link_libraries(hyperiond
+	Qt5::Core
+	pcre16 dl z ${plugin_libs}
+)
+
 if (ENABLE_AMLOGIC)
 	target_link_libraries(hyperiond
 		Qt5::Core
